@@ -1,0 +1,4 @@
+# Cloudflare Pages 설정
+# Build output: Next.js static export → out/
+name = "jp-times"
+pages_build_output_dir = "./out"
