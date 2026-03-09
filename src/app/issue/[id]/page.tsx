@@ -3,6 +3,10 @@ import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
 import { issues } from "@/data/issues";
 
+export function generateStaticParams() {
+  return issues.map((issue) => ({ id: issue.id }));
+}
+
 export default function IssuePage({ params }: { params: { id: string } }) {
   const issue = issues.find((i) => i.id === params.id);
 

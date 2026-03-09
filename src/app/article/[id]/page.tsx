@@ -4,6 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { issues } from "@/data/issues";
 
+export function generateStaticParams() {
+  const ids = issues.flatMap((i) => i.articles.map((a) => ({ id: a.id })));
+  return ids;
+}
+
 export default function ArticlePage({ params }: { params: { id: string } }) {
   const allArticles = issues.flatMap((i) => i.articles);
   const article = allArticles.find((a) => a.id === params.id);
